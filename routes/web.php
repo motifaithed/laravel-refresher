@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\CategoryController;
 
 
 /*
@@ -26,3 +27,6 @@ Route::get('/about', function () {
 
 Route::get('/contact', [ContactController::class,'index'])->name('contact');
 Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard')->middleware(['auth:sanctum', 'verified']);
+
+//To CategoryController
+Route::get('/category/all', [CategoryController::class,'index'])->name('all.category')->middleware(['auth:sanctum', 'verified']);
